@@ -8,7 +8,11 @@ import threading
 import time
 from pathlib import Path
 
-import psutil
+try:
+    import psutil
+    _PSUTIL = True
+except ImportError:
+    _PSUTIL = False
 
 from kivy.app import App
 from kivy.clock import Clock

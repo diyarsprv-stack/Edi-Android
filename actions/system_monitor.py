@@ -1,4 +1,8 @@
-import psutil
+try:
+    import psutil
+    _PSUTIL = True
+except ImportError:
+    _PSUTIL = False
 import platform
 import json
 from datetime import datetime
